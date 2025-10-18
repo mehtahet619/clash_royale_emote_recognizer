@@ -78,7 +78,6 @@ Thumbs.db
 # sounds/
 
 # Screenshots and temporary files
-*.png
 !images/*.png
 holistic_detection_screenshot.png
 

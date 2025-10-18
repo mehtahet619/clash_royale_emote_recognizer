@@ -1,6 +1,8 @@
-# MediaPipe Holistic Detector with Pose Classification
+# Clash Royale Emote Detector
 
-A complete MediaPipe Holistic detector implementation with machine learning pose classification using OpenCV and scikit-learn.
+A pose classifier for Clash Royale emotes built using MediaPipe for landmark detection and scikit-learn for machine learning classification.
+
+![Clash Royale Emote Detector in Action](example.png) 
 
 ## Features
 
@@ -24,12 +26,7 @@ pip install -r requirements.txt
 
 ### Quick Start
 
-1. **Train the model** (uses sample data):
-```bash
-python -c "from data_collector import PoseDataCollector; PoseDataCollector().load_sample_data()"
-```
-
-2. **Run the detector with pose classification**:
+1. **Run the detector with the pre-trained model**:
 ```bash
 python main.py
 ```
@@ -58,10 +55,15 @@ python data_collector.py
 ## Pose Classes
 
 The model can classify the following poses:
-- **Laughing**: Open mouth, hands on stomach, joyful expression
-- **Yawning**: Mouth wide open, arms stretched up or to sides
-- **Crying**: Hands near eyes, wiping tears, sad expression
-- **Taunting**: Provocative gesture, pointing, or mocking expression
+
+| Emote | Description | Reference |
+|-------|-------------|-----------|
+| **Laughing** | Hands on waist, mouth wide open | <img src="images/laughing.png" width="100" height="100"> |
+| **Yawning** | Hands over mouth | <img src="images/yawning.png" width="100" height="100"> |
+| **Crying** | Hands covering face | <img src="images/crying.png" width="100" height="100"> |
+| **Taunting** | Balled fists close to face | <img src="images/taunting.png" width="100" height="100"> |
+
+**Note**: You can adjust the code to add more emotes, but you'll need to retrain the model. The included pre-trained model only classifies the poses above. Add images and sounds as desired.
 
 ## Requirements
 
@@ -70,9 +72,3 @@ The model can classify the following poses:
 - MediaPipe 0.10+
 - NumPy 1.24+
 - scikit-learn 1.3+
-
-## Notes
-
-- The detector uses your default webcam (camera index 0)
-- Frame is horizontally flipped for mirror effect
-- Detection confidence can be adjusted in the `HolisticDetector` class

@@ -11,10 +11,9 @@ import numpy as np
 try:
     import pygame
     pygame.mixer.init(frequency=22050, size=-16, channels=2, buffer=512)
-    # Set up multiple sound channels for overlapping sounds
-    pygame.mixer.set_num_channels(8)  # Allow up to 8 simultaneous sounds
+    pygame.mixer.set_num_channels(8) # Allow up to 8 simultaneous sounds
     AUDIO_AVAILABLE = True
-    print("Audio support enabled with overlapping sounds")
+    print("Audio support enabled.")
 except ImportError:
     AUDIO_AVAILABLE = False
     print("Pygame not available - audio disabled. Install with: pip install pygame")
@@ -35,10 +34,8 @@ def load_reference_images():
     for pose_name, filename in pose_images.items():
         image_path = os.path.join(images_dir, filename)
         if os.path.exists(image_path):
-            # Load and resize image for display
             img = cv2.imread(image_path)
             if img is not None:
-                # Keep original size to avoid squishing
                 reference_images[pose_name] = img
                 print(f"Loaded reference image for {pose_name}: {filename}")
             else:
@@ -65,13 +62,10 @@ def play_pose_sound(pose_name):
         if pose_name in sound_files:
             sound_path = os.path.join("sounds", sound_files[pose_name])
             if os.path.exists(sound_path):
-                # Play sound in a separate thread to avoid blocking
                 def play_sound():
                     try:
-                        # Use pygame.mixer.Sound for overlapping playback instead of pygame.mixer.music
                         sound = pygame.mixer.Sound(sound_path)
-                        sound.play()  # This allows overlapping sounds
-                        print(f"Playing overlapping sound: {sound_files[pose_name]}")
+                        sound.play()
                     except Exception as e:
                         print(f"Error playing sound: {e}")
                 
@@ -209,7 +203,7 @@ def main():
             cv2.imwrite('holistic_detection_screenshot.png', frame)
             print("Screenshot saved as 'holistic_detection_screenshot.png'")
         elif key == ord('t'):
-            # Train model with real collected data
+            # Train model with collected data
             from data_collector import PoseDataCollector
             collector = PoseDataCollector()
             X, y = collector.load_sample_data()
@@ -220,7 +214,7 @@ def main():
     
     # Cleanup
     cap.release()
-    cv2.destroyAllWindows()  # This will close all windows including the persistent reference window
+    cv2.destroyAllWindows()
     detector.release()
     print("Detection stopped successfully!")
 
