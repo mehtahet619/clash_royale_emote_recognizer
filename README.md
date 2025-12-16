@@ -257,11 +257,3 @@ The first time you run the system:
 ## License
 
 See [LICENSE](LICENSE) file for details.
-
-## Contributing
-
-Contributions are welcome! Feel free to submit issues and pull requests.
-
-## Author
-
-Created as a pose detection project combining MediaPipe and machine learning.
